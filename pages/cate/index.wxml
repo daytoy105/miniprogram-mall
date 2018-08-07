@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container cate_wrap">
+  <scroll-view style="width:180rpx; height:{{sy}}px; background:#f1f1f1" scroll-y lower-threshold="100">
+    <block wx:for="{{cate_list}}" wx:key="cate{{index}}">
+      <view class="cate_item {{current==index?'active':''}}" bindtap='change_cate' data-num="{{index}}">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  <scroll-view scroll-y style="height:{{sy}}px;" >
+    <view class="cont_wrap">
+      <text class="shop_cate">内容1： {{cate_list[current]}}</text>
+      <view class="shop_wrap">
+        <view class="shop_item" wx:for="{{shops}}" wx:key="shops{{index}}" bindtap='jump_list'>
+          <image class="cate_img" src="{{item.img}}"></image>
+          <text class='shop_txt'>{{item.txt}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="cont_wrap">
+      <text class="shop_cate">内容2： {{cate_list[current]}}</text>
+      <view class="shop_wrap">
+        <view class="shop_item" wx:for="{{shops}}" wx:key="shops{{index}}">
+          <image class="cate_img" src="{{item.img}}"></image>
+          <text class='shop_txt'>{{item.txt}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

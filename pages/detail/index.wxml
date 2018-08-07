@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="detail_header">
+    <view class="dtop">
+      <text wx:for="{{tab}}" wx:key="tab{{index}}"  class="{{item.id==scroll_id?'active':''}}" data-scroll_id="{{item.id}}" bindtap='scroll_tab'>{{item.txt}}</text>
+    </view>
+    <text class="share">分享</text>
+  </view>
+  <view class="detail_content_wrap">
+    <scroll-view scroll-y="true" style="height:{{cont_height}}px" scroll-top="{{scroll_y}}" scroll-into-view="{{scroll_id}}" bindscroll="scroll">
+      <view id="produce">
+        <view class="preview_wrap">
+          <swiper indicator-dots="true" circular="true" autoplay='true'>
+            <swiper-item wx:for="{{content.preview[pindex].bimg}}" wx:key="preivew{{index}}">
+              <image src="{{item}}" class='pre_img' data-num="{{index}}" bindtap='preview'></image>
+            </swiper-item>
+          </swiper>
+          <view class="preview_small">
+            <view class="simg_wrap {{index==pindex?'active':''}}" wx:for="{{content.preview}}" wx:key="psimg{{index}}" data-num="{{index}}" bindtap='change_type'>
+              <image class="simg" src="{{item.simg}}"></image>
+              <view class="s_cate"></view>
+            </view>
+          </view>
+        </view>
+        <view class="detail_shop_info">
+          <view class="price_wrap">
+            <text class="price">￥{{content.price}}</text>
+            <view class="old_price">￥{{content.old_price}}</view>
+            <text class="discount">{{content.discount}}折</text>
+          </view>
+          <text class="new_price">折后价￥{{content.new_price}}</text>
+          <view class="shop_name">{{content.shop_name}}</view>
+        </view>
+        <view class="coupon_wrap">
+          <view></view>
+        </view>
+        <view class="size_wrap">
+          <view class="size_header">
+            <text>尺码</text>
+            <text class="size_info">查看尺码表</text>
+          </view>
+          <view class="size_list">
+            <view class="size_item {{size_index==index?'active':''}}" wx:for="{{content.sizes}}" wx:key="size{{index}}" data-num="{{index}}" bindtap='choose_size'>
+              <text>{{item.size}}</text>
+              <view class="size_pop_wrap" wx:if="{{size_index==index && size_pop}}">
+                <view class="size_pop" style="margin-left:{{-pop_left}}px">
+                  <view class="size_pop_list" wx:for="{{item.detail}}" wx:for-item="opt" wx:for-index="j" wx:key="size_info{{j}}">
+                    <text class="size_type_name">{{opt.name}}</text>
+                    <text>{{opt.num}}</text>
+                  </view>
+                  <view class="size_pop_close" catchtap='close_size'>X</view>
+                </view>
+                <view class="size_pop_cate"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="produce_other">
+        </view>
+      </view>
+      <view class="introduce" id="introduce">
+        <text>推荐</text>
+      </view>
+      <view class="detail" id="detail">
+        <text>详情</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="cart_wrap">
+    <view class="cart1">cart</view>
+    <view class="join_cart" bindtap='join_cart'>加入购物车</view>
+  </view>
+</view>

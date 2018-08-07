@@ -1,0 +1,63 @@
+<import src="../template/index.wxml"/>
+<!--index.wxml-->
+<view class="container">
+  <view class="index_head">
+    <view class="search">
+      <icon type='search' size="15" class="icon_search"></icon>
+      <text class="text">719爽购节</text>
+    </view>
+    <view class="cate" bindtap='jump_cate'>分类</view>
+  </view>
+  <view class='index_nav'>
+    <scroll-view scroll-x scroll-left="{{xscroll}}" style="width:90%;">
+      <view class="cate_list">
+        <view class="cate_info">719爽购节</view>
+        <view id="cate_{{index}}" data-num="{{index}}" class="cate_item {{selected==index?'active':''}}" wx:for="{{cate_list}}" wx:key="cate{{index+1}}" bindtap='select_cate'>
+          <text class="text">{{item}}</text>
+          <text class="line"></text>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="down_cate" bindtap='show_cate'></view>
+  </view>
+  <view class="cate_all" style="display:{{all_cate?'block':'none'}}">
+    <view class="please_cate">
+      <text class="text">请选择</text>
+      <view class="up_cate" bindtap='show_cate'></view>
+    </view>
+    <scroll-view scroll-y style="height:850rpx; border-bottom:1px solid #ddd;">
+      <view class="cate_all_list2">
+        <view class="cate_item2 " data-num="{{index}}" wx:for="{{cate_list}}" wx:key="cate_all{{index+1}}" wx:if="{{index<=12}}" bindtap='select_cate2'>
+          <image class="shop_icon" src="../../images/nav/cart-off.png"></image>
+          <text class="text {{selected==index?'active':''}}">{{item}}</text>
+        </view>
+        <view class="block_line"></view>
+        <view class="cate_item3" wx:for="{{cate_list}}" wx:key="cate_all{{index+1}}" wx:if="{{index>12}}" data-num="{{index}}" bindtap='select_cate2'>
+          <text data-num="{{index}}" class="text {{selected==index?'active':''}}">{{item}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!--tab content -->
+  <swiper style="height:100%;" current="{{selected}}" bindchange="switch_tab" duration="0">
+    <swiper-item >
+      <template is="jingxuan" data="{{imgUrls}}"></template>
+    </swiper-item>
+    <!--时尚-->
+    <block wx:for="{{cate_list}}" wx:key="cate_all{{index+1}}" wx:if="{{index<=2 && index>0}}" >
+      <swiper-item>
+        <scroll-view scroll-y>
+           
+        </scroll-view>
+      </swiper-item>
+    </block>
+    <block wx:for="{{cate_list}}" wx:key="cate_all{{index+1}}" wx:if="{{index>2}}" >
+      <swiper-item>
+        <scroll-view scroll-y>
+          <view>{{item}}</view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>

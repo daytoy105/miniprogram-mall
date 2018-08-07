@@ -1,0 +1,267 @@
+.cl_head {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  z-index: 3;
+  background: #fff;
+}
+
+.cl_head>view {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666;
+  border-right: 1px solid #eee;
+}
+
+.cl_head>view:last-child {
+  border: none;
+}
+
+.cl_head>view.active {
+  color: #f10180;
+}
+
+.icon_wrap {
+  margin-left: 15rpx;
+}
+
+.up {
+  width: 10rpx;
+  height: 10rpx;
+  border-top: 3rpx solid #666;
+  border-right: 3rpx solid #666;
+  transform: rotate(-45deg);
+}
+
+.down {
+  width: 10rpx;
+  height: 10rpx;
+  border-bottom: 3rpx solid #666;
+  border-left: 3rpx solid #666;
+  transform: rotate(-45deg);
+  margin-top: -6rpx;
+}
+
+.down.active {
+  border-bottom-color: #f10180;
+  border-left-color: #f10180;
+}
+
+.up.active {
+  border-top-color: #f10180;
+  border-right-color: #f10180;
+}
+
+/*胶囊选择*/
+
+.cl_nav {
+  display: flex;
+  width: 100%;
+  padding: 0 10rpx;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+}
+
+.nav_item {
+  width:146rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #333;
+  background: #f3f3f3;
+  border: 1px solid #f3f3f3;
+  border-radius: 6rpx;
+  margin: 20rpx 0rpx 20rpx 20rpx;
+  position: relative;
+  z-index: 1;
+  padding:6rpx;
+}
+
+.nav_item .arrow {
+  display: inline-block;
+  width: 10rpx;
+  height: 10rpx;
+  border-bottom: 3rpx solid #666;
+  border-left: 3rpx solid #666;
+  transform: rotate(-45deg);
+  margin-left: 15rpx;
+}
+.nav_item.selected {
+  background: #fff;
+  border-color: #f10180;
+  color:#f10180;
+}
+.nav_item.active {
+  background: #fff;
+  border-color: #eee;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 30rpx;
+  color: #333;
+}
+
+.nav_item.active .arrow {
+  transform: rotate(-225deg);
+  transition: transform 0.2s ease;
+  margin-top: 10rpx;
+}
+.nav_item text{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.pop_blank {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.pop_blank2 {
+  position: fixed;
+  top: 190rpx;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.47);
+}
+
+.nav_pop {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 89rpx;
+  border-top: 1px solid #eee;
+}
+
+.pop_cont {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: #fff;
+}
+
+.pop_item {
+  width: 40%;
+  font-size: 28rpx;
+  padding: 25rpx 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+  margin:0 2%;
+}
+
+.pop_item.active {
+  color: #f10180;
+  border-bottom: 1px solid #f10180;
+}
+
+.btn_wrap {
+  display: flex;
+  position: relative;
+  z-index: 3;
+}
+
+.btn_wrap button {
+  width: 50%;
+  border: none;
+  background: #fff;
+  outline: none;
+  font-size: 30rpx;
+  color: #333;
+  border-radius: 4rpx;
+}
+
+.btn_wrap .btn_confirm {
+  background: #f10180;
+  color: #fff;
+}
+
+/*商品列表*/
+.shop_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15rpx;
+  background: #f3f3f3;
+}
+
+.shop_item {
+  width: 49%;
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+
+.shop_img {
+  width: 100%;
+  height: 450rpx;
+}
+
+.info_wrap {
+  font-size: 22rpx;
+  color: #bbb;
+  padding: 20rpx 15rpx 18rpx 15rpx;
+}
+
+.price_wrap {
+  margin-bottom: 6rpx;
+}
+
+.price {
+  font-size: 28rpx;
+  color: #000;
+  font-weight: bold;
+}
+
+.pre_price {
+  margin-left: 10rpx;
+  text-decoration: line-through;
+}
+
+.new_price {
+  color: #f10180;
+}
+
+.shop_name {
+  display: inline-block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #666;
+  margin: 10rpx 0;
+}
+
+.dis_type {
+  color: #2eadfb;
+  border: 1px solid #2eadfb;
+  font-size: 18rpx;
+  padding: 0 4rpx;
+}
+.no_data{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 22rpx;
+  color: #bbb;
+}

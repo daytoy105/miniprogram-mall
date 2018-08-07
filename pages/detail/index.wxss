@@ -1,0 +1,287 @@
+.detail_header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #eee;
+  padding: 0 30rpx 10rpx;
+}
+
+.dtop {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 24rpx;
+  color: #333;
+  margin-left: 15%;
+}
+
+.dtop text.active {
+  color: #f10180;
+}
+
+.share {
+  display: inline-block;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.detail_content_wrap {
+  //margin-bottom: 100rpx;
+  background: #eee;
+}
+
+.preview_wrap {
+  background: #fff;
+}
+
+/*图片预览*/
+.preview_wrap swiper {
+  height: 648rpx;
+}
+
+.pre_img {
+  width: 80%;
+  height: 648rpx;
+  margin-left: 10%;
+}
+
+.preview_small {
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.simg_wrap {
+  position: relative;
+  margin-right: 30rpx;
+}
+
+.simg {
+  width: 68rpx;
+  height: 72rpx;
+  border: 1px solid #bbb;
+  border-radius: 6rpx;
+}
+
+.s_cate {
+  width: 0;
+  height: 0;
+  border-top: 12rpx solid #f10180;
+  border-right: 12rpx solid transparent;
+  border-left: 12rpx solid transparent;
+  position: absolute;
+  right: -6rpx;
+  bottom: 10rpx;
+  display: none;
+  transform: rotate(-45deg);
+}
+
+.simg_wrap.active .simg {
+  border-color: #f10180;
+}
+
+.simg_wrap.active .s_cate {
+  display: inline-block;
+}
+
+.detail_shop_info {
+  background: #fff;
+  padding: 25rpx 20rpx;
+}
+
+.detail_shop_info .price_wrap {
+  display: flex;
+  align-items: flex-end;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.detail_shop_info .price {
+  font-size: 36rpx;
+  color: #000;
+}
+
+.detail_shop_info .old_price {
+  text-decoration: line-through;
+  margin: 0 8rpx;
+}
+
+.detail_shop_info .new_price {
+  font-size: 22rpx;
+  color: #f10180;
+}
+
+.detail_shop_info .shop_name {
+  font-size: 24rpx;
+  color: #111;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-top: 8rpx;
+}
+/*优惠券*/
+.coupon_wrap{
+  background: #fff;
+  height: 200rpx;
+}
+/* 尺码 */
+.size_wrap{
+  background: #fff;
+  margin-bottom: 25rpx;
+}
+.size_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #222;
+}
+
+.size_info {
+  font-weight: normal;
+  font-size: 20rpx;
+  color: #00c2ff;
+}
+
+.size_list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx 20rpx 0;
+}
+
+.size_item {
+  width: 209rpx;
+  height: 48rpx;
+  border: 1px solid #eee;
+  text-align: center;
+  line-height: 48rpx;
+  margin: 0 36rpx 40rpx 0;
+  font-size: 22rpx;
+  position: relative;
+}
+
+.size_item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.size_item.active {
+  border-color: #f10180;
+  color: #f10180;
+}
+
+.size_item text {
+  display: inline-block;
+  width: 100%;
+}
+
+.size_pop_wrap {
+  width: 706rpx;
+  height: 80rpx;
+  position: absolute;
+  top: -130rpx;
+  z-index: 2;
+}
+
+.size_pop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translateX(20rpx);
+}
+
+.size_pop_list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.95);
+  border-right: 1rpx solid #666;
+  color: #fff;
+}
+
+.size_pop_list text {
+  width: 100%;
+}
+
+.size_pop_list .size_type_name {
+  color: #bbb;
+  border-bottom: 1rpx solid #666;
+}
+
+.size_pop_cate {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 16rpx solid transparent;
+  border-left: 16rpx solid transparent;
+  border-top: 16rpx solid rgba(0, 0, 0, 0.95);
+  left: 92rpx;
+}
+
+.size_pop_close {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 20rpx;
+  background: rgba(0, 0, 0, 0.95);
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+  z-index: 3;
+}
+
+/*加入购物车*/
+
+.cart_wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  background: #fff;
+  border-top: 1rpx solid #eee;
+}
+
+.cart1 {
+  width: 168rpx;
+  height: 70rpx;
+  border: 1rpx solid #eee;
+  border-radius: 12rpx;
+  margin-right: 20rpx;
+}
+
+.join_cart {
+  width: 520rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  background: #dd3d97;
+  color: #fff;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 30rpx;
+}
+
+/*其他详情*/
+.produce_other{
+  background: #fff;
+  height: 400rpx;
+  margin-bottom: 25rpx;
+}
+
+.introduce{
+  background: #fff;
+  height: 600rpx;
+  margin-bottom: 25rpx;
+}
+
+.detail{
+  background: #fff;
+  height: 1200rpx;
+}

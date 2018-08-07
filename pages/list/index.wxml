@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="cl_top">
+    <view class="cl_head">
+      <view class="price  {{flag>0?'active':''}}" bindtap='sort_price'>
+        <text>价格</text>
+        <view class="icon_wrap">
+          <view class="up {{flag==1?'active':''}}"></view>
+          <view class="down {{flag==2?'active':''}}"></view>
+        </view>
+      </view>
+      <view class="discount {{flag2>0?'active':''}}" bindtap='sort_discount'>
+        <text>折扣</text>
+        <view class="icon_wrap">
+          <view class="up {{flag2==1?'active':''}}"></view>
+          <view class="down {{flag2==2?'active':''}}"></view>
+        </view>
+      </view>
+      <view class="select">
+        <text>筛选</text>
+      </view>
+    </view>
+    <view class="cl_nav">
+      <view class="pop_blank" style="display:{{nav_index!=-1?'block':'none'}}" bindtap='cancel_nav'></view>
+      <view class="pop_blank2" style="display:{{nav_index!=-1?'block':'none'}} "  bindtap='cancel_nav'></view>
+      <block wx:for="{{navs}}" wx:key="nav{{index}}">
+        <view class="nav_item {{index==nav_index?'active':''}} {{choose[index].opt?'selected':''}} " data-num="{{index}}" bindtap='select_nav'>
+          <text wx:if="{{choose[index].opt}}">{{choose[index].opt2}}</text>
+          <block wx:else>
+            <text>{{item.type}}</text>
+            <text class="arrow"></text>
+          </block>
+        </view>
+        <view class="nav_pop" style="display:{{nav_index==index?'block':'none'}};">
+          <scroll-view scroll-y style="max-height:400rpx;">
+            <view class="pop_cont">
+              <view wx:for="{{item.list}}" wx:for-item="opt" wx:for-index="j" wx:key="nav_d{{j}}" class="pop_item {{tmp_choose[index]&& tmp_choose[index].selected[j] ?'active':''}}" bindtap='choose_pop' data-num="{{j}}" data-opt="{{opt}}" data-pid="{{index}}">
+                <text>{{opt}}</text>
+                <icon type="success_no_circle" size="10" color="#f10180" style="display:{{tmp_choose[index].selected[j]?'block':'none'}}"></icon>
+              </view>
+            </view>
+          </scroll-view>
+          <view class="btn_wrap">
+            <button class="btn_reset" bindtap='reset'>重置</button>
+            <button class="btn_confirm" bindtap='confirm'>确认</button>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <scroll-view scroll-y style="height:{{cont_height}}px" bindscrolltolower="more">
+    <view class="shop_wrap">
+      <view class="shop_item" wx:for="{{shop_list}}" wx:key="shop_list{{index}}" bindtap='jump_detail'>
+        <image src="{{item.img}}" class="shop_img"></image>
+        <view class="info_wrap">
+          <view class="price_wrap">
+            <text class="price">￥{{item.price}}</text>
+            <text class="pre_price">￥{{item.pre_price}}</text>
+            <text>{{(item.discount)}}</text>
+          </view>
+          <text class="new_price">折后价 ￥{{item.new_price}}</text>
+          <text class="shop_name">{{item.brance}} {{item.shop_name}}</text>
+          <text class="dis_type">{{item.dis_type}}</text>
+        </view>
+      </view>
+      <text class="no_data">—— 没有更多了 ———</text>
+    </view>
+    
+  </scroll-view>
+</view>
