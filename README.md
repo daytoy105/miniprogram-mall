@@ -1,2 +1,0 @@
-# miniprogram-mall
-miniprogram-mall
