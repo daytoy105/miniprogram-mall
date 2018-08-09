@@ -1,21 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="user">
-    <image src="{{userInfo.avatarUrl}}" class="avatar"  bindtap='handleChoose'></image>
+    <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
     <text class="name">{{userInfo.nickName}}</text>
   </view>
-  <view class="upload" wx:if="{{flag}}">
-    <canvas canvas-id="canvas_clip" style="width:522rpx; height:522rpx;"/> 
-    <view id="clipArea">
-      <image id="uploadPreview" style="width:{{_img.w}}px; height:{{_img.h}}px ; transform:translate3d({{lx}}px,{{ly}}px,0) scale({{scale}})  rotate({{rotate}}deg); transform-origin:center center" src="{{src}}"></image>
-      <view class="photo-clip-mask">
-        <view class="photo-clip-area" bindtouchmove='handleMove' bindtouchend='handleEnd'  bindtouchstart='handleStart' bindtouchend='handleEnd'></view>
-      </view>
-    </view>
-    <view class="clipBtn">
-      <image class="code_cancel" src="../../images/code_cancel.png" bindtap='cancle'></image>
-      <image class="code_ok" src="../../images/xian_ok.png" bindtap='handleSavePicture'></image>
-    </view>
-  </view>
-  
 </view>

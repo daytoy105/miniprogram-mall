@@ -2,9 +2,9 @@
 <view class="container">
   <view class="detail_header">
     <view class="dtop">
-      <text wx:for="{{tab}}" wx:key="tab{{index}}"  class="{{item.id==scroll_id?'active':''}}" data-scroll_id="{{item.id}}" bindtap='scroll_tab'>{{item.txt}}</text>
+      <text wx:for="{{tab}}" wx:key="tab{{index}}"  class="{{item.id==scroll_id?'active':''}}" data-scroll_id="{{item.id}}" bindtap='scroll_tab' >{{item.txt}}</text>
     </view>
-    <text class="share">分享</text>
+    <button class="share" open-type="share" >分享</button>
   </view>
   <view class="detail_content_wrap">
     <scroll-view scroll-y="true" style="height:{{cont_height}}px" scroll-top="{{scroll_y}}" scroll-into-view="{{scroll_id}}" bindscroll="scroll">

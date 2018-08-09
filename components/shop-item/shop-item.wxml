@@ -1,0 +1,17 @@
+<view class="shop_wrap">
+  <view class="shop_item" wx:for="{{shop_list}}" wx:key="shop_list{{index}}" catchtap='jump_detail'>
+    <image src="{{item.img}}" class="shop_img"></image>
+    <view class="info_wrap">
+      <view class="price_wrap">
+        <text class="price">￥{{item.price}}</text>
+        <text class="pre_price">￥{{item.pre_price}}</text>
+        <text>{{(item.discount)}}</text>
+      </view>
+      <text class="new_price">折后价 ￥{{item.new_price}}</text>
+      <text class="shop_name">{{item.brance}} {{item.shop_name}}</text>
+      <text class="dis_type">{{item.dis_type}}</text>
+    </view>
+  </view>
+  <text class="no_data">—— 没有更多了 ———</text>
+</view>
+ 

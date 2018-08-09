@@ -11,6 +11,9 @@ Page({
     xscroll:0,
     init:0
   },
+  onReady:function(){
+    this.shopItem = this.selectComponent("#shop-item1");
+  },
   onLoad: function () {
     let that = this
     // tab分类的初始距离
@@ -24,7 +27,7 @@ Page({
     })
     //console.log(this.route)
   },
- 
+  
   jump_cate:function(e){
     wx.navigateTo({
       url: '../cate/index',
@@ -86,5 +89,9 @@ Page({
   // 跳转详情  获得 template 事件的对象， 子-父 
   jump_detail: function (e) {
     tempObj.jump_detail(e)
+    //console.log(tempObj.data.tmp)
   },
+  more:function(){
+    this.shopItem._more()
+  }
 })

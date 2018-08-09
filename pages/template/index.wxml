@@ -1,11 +1,9 @@
 <template name="jingxuan">
-  <scroll-view scroll-y>
-    <swiper indicator-dots="true" indicator-active-color="#01d1ff" interval="2000" duration="500" autoplay="true" circular="true" class="ad_swiper">
-      <block wx:for="{{imgUrls}}" wx:key="banner_{{index+1}}">
-        <swiper-item>
-          <image src="{{item}}" class="slide-image" width="100%" height="120"  data-num="{{index}}" bindtap="jump_detail" />
-        </swiper-item>
-      </block>
-    </swiper>
-  </scroll-view>
+  <swiper indicator-dots="true" indicator-active-color="#01d1ff" interval="2000" duration="500" autoplay="true" circular="true" class="ad_swiper">
+    <block wx:for="{{imgUrls}}" wx:key="banner_{{index+1}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="100%" height="120" data-num="{{index}}" bindtap="jump_detail" />
+      </swiper-item>
+    </block>
+  </swiper>
 </template>

@@ -23,10 +23,14 @@
   text-align: center;
   font-size: 24rpx;
   color: #666;
+  background: transparent;
+  height: 40rpx;
+  line-height: 40rpx;
 }
-
+.share::after{
+  border: none;
+}
 .detail_content_wrap {
-  //margin-bottom: 100rpx;
   background: #eee;
 }
 

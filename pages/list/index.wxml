@@ -22,7 +22,7 @@
     </view>
     <view class="cl_nav">
       <view class="pop_blank" style="display:{{nav_index!=-1?'block':'none'}}" bindtap='cancel_nav'></view>
-      <view class="pop_blank2" style="display:{{nav_index!=-1?'block':'none'}} "  bindtap='cancel_nav'></view>
+      <view class="pop_blank2" style="display:{{nav_index!=-1?'block':'none'}} " bindtap='cancel_nav'></view>
       <block wx:for="{{navs}}" wx:key="nav{{index}}">
         <view class="nav_item {{index==nav_index?'active':''}} {{choose[index].opt?'selected':''}} " data-num="{{index}}" bindtap='select_nav'>
           <text wx:if="{{choose[index].opt}}">{{choose[index].opt2}}</text>
@@ -48,23 +48,5 @@
       </block>
     </view>
   </view>
-  <scroll-view scroll-y style="height:{{cont_height}}px" bindscrolltolower="more">
-    <view class="shop_wrap">
-      <view class="shop_item" wx:for="{{shop_list}}" wx:key="shop_list{{index}}" bindtap='jump_detail'>
-        <image src="{{item.img}}" class="shop_img"></image>
-        <view class="info_wrap">
-          <view class="price_wrap">
-            <text class="price">￥{{item.price}}</text>
-            <text class="pre_price">￥{{item.pre_price}}</text>
-            <text>{{(item.discount)}}</text>
-          </view>
-          <text class="new_price">折后价 ￥{{item.new_price}}</text>
-          <text class="shop_name">{{item.brance}} {{item.shop_name}}</text>
-          <text class="dis_type">{{item.dis_type}}</text>
-        </view>
-      </view>
-      <text class="no_data">—— 没有更多了 ———</text>
-    </view>
-    
-  </scroll-view>
+  <shop-item id="shop-item" cont_height="{{cont_height}}" bind:more="_more2"></shop-item>
 </view>

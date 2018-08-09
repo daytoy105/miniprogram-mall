@@ -1,4 +1,4 @@
-<import src="../template/index.wxml"/>
+<import src="../template/index.wxml" />
 <!--index.wxml-->
 <view class="container">
   <view class="index_head">
@@ -39,25 +39,22 @@
     </scroll-view>
   </view>
   <!--tab content -->
-  <swiper style="height:100%;" current="{{selected}}" bindchange="switch_tab" duration="0">
-    <swiper-item >
-      <template is="jingxuan" data="{{imgUrls}}"></template>
+  <swiper style="height:480px;" current="{{selected}}" bindchange="switch_tab" duration="0">
+    <swiper-item>
+      <scroll-view scroll-y style="height:480px;" bindscrolltolower="more">
+          <template is="jingxuan" data="{{imgUrls}}"></template>
+          <shop-item id="shop-item1" ></shop-item>
+       </scroll-view>
     </swiper-item>
-    <!--时尚-->
-    <block wx:for="{{cate_list}}" wx:key="cate_all{{index+1}}" wx:if="{{index<=2 && index>0}}" >
-      <swiper-item>
-        <scroll-view scroll-y>
-           
-        </scroll-view>
-      </swiper-item>
-    </block>
-    <block wx:for="{{cate_list}}" wx:key="cate_all{{index+1}}" wx:if="{{index>2}}" >
-      <swiper-item>
-        <scroll-view scroll-y>
-          <view>{{item}}</view>
-        </scroll-view>
-      </swiper-item>
-    </block>
+      <!--时尚-->
+      <block wx:for="{{cate_list}} " wx:key="cate_all{{index+1}} " wx:if="{{index<=2 && index>0}}">
+        <swiper-item>
+        </swiper-item>
+        </block>
+        <block wx:for="{{cate_list}}" wx:key="cate_all{{index+1}}" wx:if="{{index>2}}">
+          <swiper-item>
+            <view>{{item}}</view>
+          </swiper-item>
+        </block>
   </swiper>
-
 </view>

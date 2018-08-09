@@ -24,7 +24,11 @@ git pull --rebase origin master
   父->子 传参  data
   回调 
     引入子对象，调用子事件
+# component 
+  组件内： Component()构造器 ， 参数properity , methods
+  父： this.selectComponent(id)  // 可调用组件内部的参数，方法
+  
 
 # {{}}  内不能使用函数
 
-#aaaaa
+# 

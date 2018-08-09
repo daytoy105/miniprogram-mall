@@ -246,5 +246,13 @@ Page({
     this.setData({
       scroll_id: id
     })
+  },
+  onShareAppMessage:function(res){
+    let { content } = this.data
+    return {
+      title:content.shop_name,
+      path:'/pages/detail/index',
+      imageUrl: content.preview[0].simg
+    }
   }
 })
