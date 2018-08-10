@@ -9,6 +9,7 @@ git pull --rebase origin master
 
 # 事件
   1 参数问题   通过data-  获取
+    ~ 小程序是react模式的，使用data触发状态变化而刷新界面
   2 target  currentTarget
 
 # 路由传参
@@ -31,4 +32,4 @@ git pull --rebase origin master
 
 # {{}}  内不能使用函数
 
-# 
+# 小程序不允许打开超过5个层级的页面 ,   
