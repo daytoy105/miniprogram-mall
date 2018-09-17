@@ -15,7 +15,7 @@
 	获取全局数据 ： getApp().data  
 
 # Page() 页面注册
-	1.	onLoad: 页面加载
+	1. onLoad: 页面加载
 		一个页面只会调用一次。
 		接收页面参数可以获取wx.navigateTo和wx.redirectTo及中的 query。
 	2. onShow: 页面显示
