@@ -1,9 +1,6 @@
 Component({
-  properties:{
-    cont_height:{
-      type:String,
-      value:''
-    }
+  properties: {
+    userinfo: String ,
   },
   data:{
     shop_list: [{
@@ -44,7 +41,15 @@ Component({
     ],
     no_more:0
   },
+  lifetimes:{
+    
+  },
+  ready: function () {
+    console.log('component')
+    console.log(this.data)
+  },
   methods:{
+    
     _more: function () {
       let {
         shop_list

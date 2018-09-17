@@ -11,23 +11,32 @@ Page({
     xscroll:0,
     init:0
   },
-  onReady:function(){
-    this.shopItem = this.selectComponent("#shop-item1");
-  },
   onLoad: function () {
+    //console.log(this.route)
+    this.setData({
+      init: this.data.init+1
+    })
+    console.log('one:', this.data.init)
+    this.setData({
+      init: this.data.init+1
+    })
+    console.log('two:', this.data.init)
+  },
+  onReady: function () {
     let that = this
+    this.shopItem = this.selectComponent("#shop-item1");
     // tab分类的初始距离
     wx.createSelectorQuery().select('#cate_0').boundingClientRect(function (rect) {
       that.setData({
         init: rect.left
       })
     }).exec()
+  },
+  onShow:function(){
     wx.setNavigationBarTitle({
       title: '首页',
     })
-    //console.log(this.route)
   },
-  
   jump_cate:function(e){
     wx.navigateTo({
       url: '../cate/index',
@@ -43,6 +52,7 @@ Page({
   },
   select_cate:function(e){
     let target = e.currentTarget
+    console.log(e)
     let { init } = this.data
     this.setData({
       xscroll: target.offsetLeft - init,

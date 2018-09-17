@@ -10,10 +10,10 @@
   </view>
   <view class='index_nav'>
     <scroll-view scroll-x scroll-left="{{xscroll}}" style="width:90%;">
-      <view class="cate_list">
+      <view class="cate_list" >
         <view class="cate_info">719爽购节</view>
         <view id="cate_{{index}}" data-num="{{index}}" class="cate_item {{selected==index?'active':''}}" wx:for="{{cate_list}}" wx:key="cate{{index+1}}" bindtap='select_cate'>
-          <text class="text">{{item}}</text>
+          <text class="text" id="cate_p" >{{item}}</text>
           <text class="line"></text>
         </view>
       </view>
@@ -25,7 +25,7 @@
       <text class="text">请选择</text>
       <view class="up_cate" bindtap='show_cate'></view>
     </view>
-    <scroll-view scroll-y style="height:850rpx; border-bottom:1px solid #ddd;">
+    <scroll-view scroll-y style="height:820rpx; border-bottom:1px solid #ddd;">
       <view class="cate_all_list2">
         <view class="cate_item2 " data-num="{{index}}" wx:for="{{cate_list}}" wx:key="cate_all{{index+1}}" wx:if="{{index<=12}}" bindtap='select_cate2'>
           <image class="shop_icon" src="../../images/nav/cart-off.png"></image>
@@ -43,7 +43,7 @@
     <swiper-item>
       <scroll-view scroll-y style="height:480px;" bindscrolltolower="more">
           <template is="jingxuan" data="{{imgUrls}}"></template>
-          <shop-item id="shop-item1" ></shop-item>
+          <shop-item id="shop-item1" userinfo='test'></shop-item>
        </scroll-view>
     </swiper-item>
       <!--时尚-->

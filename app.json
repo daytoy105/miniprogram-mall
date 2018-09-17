@@ -2,11 +2,11 @@
   "pages":[
     "pages/index/index",
     "pages/list/index",
-    "pages/personal/index",
     "pages/cart/index",
     "pages/order/index",
     "pages/detail/index",
-    "pages/cate/index"
+    "pages/cate/index",
+    "pages/personal/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
